@@ -31,7 +31,9 @@ The competition data is not redistributed in this repository. The notebook expec
 
 This project follows an end-to-end business and data science workflow. It begins with a planning question, verifies whether the data is reliable enough for forecasting, builds only information-safe features, and ends with an out-of-sample model decision rather than a training-score comparison.
 
-![Retail demand forecasting workflow](assets/analytical-workflow.png)
+<p align="center">
+  <img src="assets/analytical-workflow.png" alt="Retail demand forecasting workflow" width="620">
+</p>
 
 ### 1. Validate the demand signal
 
