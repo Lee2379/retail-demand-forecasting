@@ -1,0 +1,26 @@
+name: quality
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Run pipeline tests
+        run: python -m pytest -q
+      - name: Validate notebook structure
+        run: |
+          python - <<'PY'
+          import nbformat
+          notebook = nbformat.read("notebooks/retail_demand_forecasting.ipynb", as_version=4)
+          nbformat.validate(notebook)
+          PY
