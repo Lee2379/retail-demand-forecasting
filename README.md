@@ -29,16 +29,9 @@ The competition data is not redistributed in this repository. The notebook expec
 
 ## Analytical approach
 
-```mermaid
-flowchart LR
-    A[Business question] --> B[Data validation]
-    B --> C[EDA and seasonality]
-    C --> D[Leakage-safe features]
-    D --> E[Transparent baselines]
-    E --> F[Gradient boosting]
-    F --> G[Locked test evaluation]
-    G --> H[Operational recommendation]
-```
+This project follows an end-to-end business and data science workflow. It begins with a planning question, verifies whether the data is reliable enough for forecasting, builds only information-safe features, and ends with an out-of-sample model decision rather than a training-score comparison.
+
+![Retail demand forecasting workflow](assets/analytical-workflow.png)
 
 ### 1. Validate the demand signal
 
